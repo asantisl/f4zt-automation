@@ -23,3 +23,4 @@ jobs:
           echo "Este es el valor de platform ${{ env.paltform }}"
           echo "Este es el valor de region ${{ env.region }}"
           echo "Este es el valor de account ${{ env.account }}"
+          echo "Este mensaje test"
