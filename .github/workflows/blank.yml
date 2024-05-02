@@ -20,7 +20,12 @@ jobs:
       - name: "Show env variables"
         if: ${{env.paltform=='aws'}}
         run: |
-          echo "Este es el valor de platform ${{ env.paltform }}"
-          echo "Este es el valor de region ${{ env.region }}"
-          echo "Este es el valor de account ${{ env.account }}"
+          echo "Este es el valor de platform: ${{ env.paltform }}"
+          echo "Este es el valor de region: ${{ env.region }}"
+          echo "Este es el valor de account: ${{ env.account }}"
           echo "Este mensaje test"
+      - name: "Mostrando variables por defecto"
+        run: |
+          echo "Evento: ${{github.event}}"
+          echo "GitHub Actor: ${{github.actor}}"
+          echo "GitHub Repository: $GITHUB_REPOSITORY"
