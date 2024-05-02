@@ -1,3 +1,4 @@
+
 name: F4zt Automation
 
 on: 
@@ -9,8 +10,16 @@ on:
 jobs:
   build: 
     runs-on: ubuntu-latest
-    
+    env: 
+      paltform: azure
+      region: us-east-1
+      account: 123123123
+
     steps: 
       - name: "Show message"
         run: echo "Hello world"
-        
+      - name: "Show env variables"
+        run: |
+          echo "Este es el valor de platform ${{ env.paltform }}"
+          echo "Este es el valor de region ${{ env.region }}"
+          echo "Este es el valor de account ${{ env.account }}"
