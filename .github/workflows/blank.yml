@@ -1,24 +1,24 @@
-
 name: F4zt Automation
 
-on: 
+on:
   push:
-      branches: [ "main" ]
+    branches: ["main"]
 
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
-  build: 
+  build:
     runs-on: ubuntu-latest
-    env: 
+    env:
       paltform: azure
       region: us-east-1
       account: 123123123
 
-    steps: 
+    steps:
       - name: "Show message"
         run: echo "Hello world"
       - name: "Show env variables"
+        if: ${{env.paltform=='aws'}}
         run: |
           echo "Este es el valor de platform ${{ env.paltform }}"
           echo "Este es el valor de region ${{ env.region }}"
